@@ -1,4 +1,4 @@
-class Person:
+# class Person:
     def __init__(self, firstname, lastname, age):
         self._firstname = firstname
         self.lastname = lastname
@@ -129,6 +129,3 @@ def add(a, b):
 
 
 add(5, 5)
-
-
-
