@@ -1,4 +1,4 @@
-# class Person:
+class Person:
     def __init__(self, firstname, lastname, age):
         self.firstname = firstname
         self.lastname = lastname
@@ -19,23 +19,17 @@
         self._firstname = value
 
 
-rasmus = Person("Rasmus", "Roager", 34)
-print(rasmus)
-print(repr(rasmus))
-
-
-
-print(rasmus.firstname)
-rasmus.firstname = "Bent"
-print(rasmus.firstname)
-
-
 class Student(Person):
-    pass
+    def __init__(self, firstname, lastname, age, school):
+        super().__init__(firstname, lastname, age)
+        self.school = school
+
+    def __str__(self):
+        return f"{self.firstname} {self.lastname} is {self.age} years old " \
+               f"and studies at {self.school}"
 
 
-tobias = Student("Tobias", "Bojesen", 27)
+tobias = Student("Tobias", "Bojesen", 27, "KEA")
 print(tobias)
 print(type(tobias))
-
 print(isinstance(tobias, Person))

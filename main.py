@@ -51,81 +51,41 @@ generator = (i for i in range(10))
 print(generator)
 
 
-def generate_fibonacci():
-    n1 = 0
-    n2 = 1
-    while True:
-        yield n1
-        n1, n2 = n2, n1 + n2
+# def generate_fibonacci():
+#     n1 = 0
+#     n2 = 1
+#     while True:
+#         yield n1
+#         n1, n2 = n2, n1 + n2
+#
+#
+# seq = generate_fibonacci()
+# print(seq)
+# f1 = next(seq)
+# print(f1)
+# f2 = next(seq)
+# print(f2)
+# f3 = next(seq)
+# print(f3)
+# f4 = next(seq)
+# print(f4)
+# f5 = next(seq)
+# print(f5)
+#
+# fibonacci_list = []
+#
+# def iterate_fibonacci():
+#     n1 = 0
+#     n2 = 1
+#     while True:
+#         n1, n2 = n2, n1 + n2
+#         fibonacci_list.append(n1)
+#
+#
+# #iterate_fibonacci()
+# #print(fibonacci_list)
+#
 
 
-seq = generate_fibonacci()
-print(seq)
-f1 = next(seq)
-print(f1)
-f2 = next(seq)
-print(f2)
-f3 = next(seq)
-print(f3)
-f4 = next(seq)
-print(f4)
-f5 = next(seq)
-print(f5)
-
-fibonacci_list = []
-
-def iterate_fibonacci():
-    n1 = 0
-    n2 = 1
-    while True:
-        n1, n2 = n2, n1 + n2
-        fibonacci_list.append(n1)
 
 
-#iterate_fibonacci()
-#print(fibonacci_list)
-
-#f = open('text.txt', 'w')
-#f.write('hej med dig igen')
-#f.close()
-
-#with open('text.txt', 'w') as f:
-#    f.write('Hej med dig igen igen')
-
-
-with open('text.txt', 'r') as f:
-    print(f.read())
-
-
-from contextlib import contextmanager
-
-
-@contextmanager
-def open_file(filename, mode):
-    f = open(filename, mode)
-    try:
-        yield f
-    finally:
-        f.close()
-
-
-with open_file('text.txt', 'r') as f:
-    print(f.read())
-
-
-def debugger(func):
-    def wrapper(*args):
-        print(f'DEBUG:  func: {func.__name__}')
-        print(f'DEBUG:  args: {args}')
-        result = func(*args)
-        print(f'RESULT: {result}')
-        return result
-    return wrapper
-
-
-@debugger
-def add(a, b):
-    return a + b
-
-
-add(5, 5)
